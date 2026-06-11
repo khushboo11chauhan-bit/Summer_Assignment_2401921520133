@@ -1,1 +1,21 @@
-
+class Solution {
+    public String reverseWords(String s) {
+        int i = 0 , j = 0;
+        String ans = "";
+        while(i<s.length()){
+            while(s.charAt(j)!= ' '){
+                 j++;
+                if(j==s.length()) break;
+            }
+            int count = j;
+            while(i!=j){
+                ans = ans+s.charAt(j-1);
+                j--;
+            }
+            if(count!=s.length())ans = ans+" ";
+            i = count+1;
+            j = count+1;
+        }
+        return ans;
+    }
+}
